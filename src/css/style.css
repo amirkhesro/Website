@@ -262,6 +262,12 @@ p:has(> img):has(+ p > em:first-child) > img {
   border: 1px solid var(--rule);
 }
 
+/* The cover on a home page card is a link to that book's page. */
+.book-cover-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .book-title {
   margin: 0 0 0.35rem;
   font-size: 1.05rem;
