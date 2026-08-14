@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} | Amir Khesro</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/whispers-through-the-fog/">Whispers Through The Fog</a></li>
+          <li><a href="/acoustic-neuroma-handbook/">The Acoustic Neuroma Handbook</a></li>
+          <li><a href="/signed-copies/">Signed Copies</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/connect/">Connect</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer>
+      <p>&copy; {{ currentYear }} Amir Khesro Publishing</p>
+    </footer>
+  </body>
+</html>
