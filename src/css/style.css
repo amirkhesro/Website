@@ -246,6 +246,14 @@ p:has(> img):has(+ p > em:first-child) > img {
   object-fit: cover;
 }
 
+/* Book pages: show the cover at a readable size rather than letting it
+   fill the whole column. The width/height attributes keep its space
+   reserved while it loads. */
+.book-cover-full {
+  max-width: 17rem;
+  border: 1px solid var(--rule);
+}
+
 .book-title {
   margin: 0 0 0.35rem;
   font-size: 1.05rem;
