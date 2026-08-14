@@ -16,6 +16,27 @@ module.exports = function (eleventyConfig) {
     new Date(value).toISOString().slice(0, 10)
   );
 
+  // Links in posts that leave the site open in a new tab. Links to
+  // amirkhesro.com are left alone: they become internal once the new site
+  // is live, and will be rewritten as relative paths at launch.
+  eleventyConfig.amendLibrary("md", (md) => {
+    const isOffsite = (href) =>
+      /^https?:\/\//i.test(href) &&
+      !/^https?:\/\/(www\.)?amirkhesro\.com(\/|$|\?|#)/i.test(href);
+
+    const base =
+      md.renderer.rules.link_open ||
+      ((tokens, idx, options, env, self) => self.renderToken(tokens, idx, options));
+
+    md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+      if (isOffsite(tokens[idx].attrGet("href") || "")) {
+        tokens[idx].attrSet("target", "_blank");
+        tokens[idx].attrSet("rel", "noopener");
+      }
+      return base(tokens, idx, options, env, self);
+    };
+  });
+
   // Copy static assets straight through to the built site.
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/css");
