@@ -1,0 +1,5 @@
+# Installed packages
+node_modules/
+
+# Built site
+_site/
