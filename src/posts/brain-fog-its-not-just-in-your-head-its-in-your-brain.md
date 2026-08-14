@@ -11,7 +11,7 @@ Similarly, anxiety and depression are common and often co-exist with brain fog. 
 
 While these conditions can overlap in how they make us feel—foggy, tired, or mentally drained—it’s important to understand that brain fog is not simply a by-product of emotional stress. Especially in the context of acoustic neuroma, brain fog has clear physiological origins in the brain itself. Recent research—and the lived experience of many patients—has shown that cognitive symptoms are not just emotional responses, but neurological consequences of the tumour’s effects on the brain.
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/d9491fa5-9876-459d-943d-13f1c83c4f26-300x200.png -->
+![Illustration of a brain with a tumour on it sitting beneath a grey cloud labelled brain fog, flanked by two figures holding their heads, labelled anxiety and depression](/images/blog/brain-fog-anxiety-and-depression.png)
 
 **When the Fog Comes First**
 
@@ -23,7 +23,7 @@ That avoidance wasn’t rooted in fear of an accident, it was something much dee
 
 Yes, like anyone, I have had emotional ups and downs in life, times where stress or sadness clouded my thinking. But this fog felt different. Heavier. More mechanical. It wasn’t just mood-related—it felt like something in my brain’s wiring had changed. That experience is what led me to explore the physiological causes of brain fog in acoustic neuroma because for many of us, this is not just emotional; it’s neurological.
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/4b7909ba-0d91-47dc-ac44-500bcfbfce78-300x300.png -->
+![A driver gripping the steering wheel with a troubled expression and a cloud of fog around his head, the road ahead blurred](/images/blog/brain-fog-losing-confidence-driving.png)
 
 **What the Research Shows**
 
@@ -52,7 +52,7 @@ Though acoustic neuromas are slow-growing, they can press against the cerebellum
 **4. Neurochemical Disruption**  
 The tumour’s impact on brain circuits also influences levels of neurotransmitters like dopamine, serotonin, and norepinephrine. These are the same chemicals involved in mood and cognition—and their disruption may contribute to a blend of brain fog, emotional flattening, and executive dysfunction. This might explain why brain fog in AN doesn’t respond to typical anxiety or depression treatments—it has a mechanical origin, not just a psychological one.
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/00945d0b-3de4-4b2f-9179-03696a6fd37f-2-300x300.png -->
+![Diagram of a head in profile showing an acoustic neuroma on the brain, with four labelled causes of brain fog: hearing loss, vestibular dysfunction, frontal lobe and cerebellum, and neurochemical disruption](/images/blog/brain-fog-four-causes-diagram.png)
 
 **When a Name Brings Clarity**
 

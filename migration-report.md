@@ -44,7 +44,9 @@ Note on the brief: the skip instruction described an unfinished post reading **"
 
 ## Posts containing images
 
-No image is hotlinked. Each one is recorded in place as an HTML comment carrying the original WordPress URL, ready to be replaced once the files are copied across. 11 images in 5 posts:
+**Update — images migrated.** All 11 images have since been downloaded into `src/images/blog/` at their full-size originals and the placeholder comments replaced with real image elements using root-relative paths and descriptive alt text. `src/images` is passed through to the built site by `eleventyConfig.addPassthroughCopy`. Nothing is hotlinked to WordPress any more. The original URLs are kept below as the provenance record.
+
+11 images in 5 posts:
 
 **`from-hospital-bed-to-standing-tall-salford-face-to-face-meeting.md`** (2)
 - `https://amirkhesro.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-20-at-16.04.47_99d4e3dd-1-1024x943.jpg`
@@ -67,7 +69,19 @@ No image is hotlinked. Each one is recorded in place as an HTML comment carrying
 - `https://amirkhesro.com/wp-content/uploads/2025/06/image-3-1024x768.jpg`
 - `https://amirkhesro.com/wp-content/uploads/2025/06/imagw-final-1024x768.jpg`
 
-Every image on the live site is served at a resized WordPress derivative (`-1024x768` and similar). The URLs above are the exact ones the live pages use. When copying the files across, prefer the full-size original from the media library where you have it.
+Every image on the live site is served at a resized WordPress derivative (`-1024x768` and similar). The URLs above are the exact ones the live pages use. The full-size original of each was resolved through the WordPress media library and that is what was downloaded — so, for example, the biryani photo is the 1126×2000 original rather than the 577×1024 derivative the live page serves.
+
+Local file names, in post order:
+
+| Post | Local file |
+|---|---|
+| `after-the-feast…` | `after-the-feast-biryani.jpg`, `after-the-feast-tea-break-by-the-reservoir.jpg`, `after-the-feast-conversation-on-the-walk.jpg`, `after-the-feast-group-photo.jpg` |
+| `brain-fog…` | `brain-fog-anxiety-and-depression.png`, `brain-fog-losing-confidence-driving.png`, `brain-fog-four-causes-diagram.png` |
+| `from-hospital-bed…` | `salford-meeting-reading-from-the-book.jpg`, `salford-meeting-group-with-books.jpg` |
+| `from-surgery-to-sand…` | `from-surgery-to-sand-jumping-in-the-surf.jpg` |
+| `understanding-facial-numbness…` | `facial-numbness-and-dry-eye.jpg` |
+
+The three `brain-fog` PNGs are large for what they are (1.7–2.6 MB each of flat illustration). They are worth converting to WebP, or at least re-encoding, before launch.
 
 ## Needs your attention
 

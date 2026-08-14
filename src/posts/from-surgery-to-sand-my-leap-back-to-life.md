@@ -50,7 +50,7 @@ But there I was.
 I didn’t overthink it.  
 I just moved.
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-29-at-19.01.19_a0fc40f1-1-1024x768.jpg -->
+![Four men leaping barefoot through the shallow surf with their arms flung wide, the cranes of the Liverpool docks on the horizon behind them](/images/blog/from-surgery-to-sand-jumping-in-the-surf.jpg)
 
 **The moment that said: I am back.**
 

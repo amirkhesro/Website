@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Base stylesheet — amirkhesro.com
+   Mobile first. No framework, no JavaScript, no web fonts.
+   ========================================================================== */
+
+/* --- Design tokens ------------------------------------------------------ */
+
+:root {
+  --text: #2e2e2e;            /* dark grey body text */
+  --muted: #63676b;           /* dates, footer */
+  --accent: #1f4e79;          /* deep muted blue */
+  --accent-hover: #143551;
+  --accent-visited: #3c5d7d;  /* deliberately close to --accent */
+  --rule: #e2e5e8;            /* hairline borders */
+  --bg: #fff;
+
+  --measure: 42rem;           /* content column width */
+  --gutter: 1.25rem;          /* keeps text off the screen edge */
+}
+
+/* --- Base --------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 112.5% of the 16px default = an 18px base, so rem units scale with it
+   and still respect the reader's own browser font size. */
+html {
+  font-size: 112.5%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Layout ------------------------------------------------------------- */
+
+/* One centred column. The borders on header and footer run full width,
+   while their contents line up with the text. */
+header nav,
+main,
+footer {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+main {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+/* --- Header and navigation ---------------------------------------------- */
+
+header {
+  border-bottom: 1px solid var(--rule);
+}
+
+header nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Horizontal row of links that wraps onto more lines when space runs out. */
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 0.15rem 0;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;
+}
+
+/* --- Links -------------------------------------------------------------- */
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:visited {
+  color: var(--accent-visited);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent-hover);
+  text-decoration-thickness: 2px;
+}
+
+/* --- Headings ----------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;      /* tighter than body copy */
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.4rem;
+}
+
+h3 {
+  margin: 2rem 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+/* --- Body copy ---------------------------------------------------------- */
+
+p {
+  margin: 0 0 1.15rem;
+}
+
+ul,
+ol {
+  margin: 0 0 1.15rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+blockquote {
+  margin: 1.75rem 0;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--muted);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+hr {
+  height: 0;
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+/* Post and listing dates. Kept on one line so a date never breaks in half. */
+time {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* --- Media -------------------------------------------------------------- */
+
+/* Never let an image push past the column or distort. */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.75rem 0;
+}
+
+/* --- Footer ------------------------------------------------------------- */
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* --- Larger screens ----------------------------------------------------- */
+
+@media (min-width: 40em) {
+  main {
+    padding-top: 3.5rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+  }
+}

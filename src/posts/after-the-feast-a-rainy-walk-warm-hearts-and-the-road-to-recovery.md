@@ -23,7 +23,7 @@ Spread across tables and picnic benches were dishes that told stories:
 
 I do regret not taking photos of the food—we were probably too hungry to think about it at the time! But I did manage to find this one of the beryani, which brings back the flavour of the moment.
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/image-1-577x1024.jpg -->
+![A large metal tray of biryani, the rice streaked orange and white and studded with meat and greens, with a serving spoon resting on the rim](/images/blog/after-the-feast-biryani.jpg)
 
 There was a quiet rhythm to how the feast began—a reminder of traditions many of us had grown up with back home, where food is served in turns, not in haste. The men started first, dividing the dishes carefully: half for us, and half respectfully set aside for the women and children, who would eat next. It wasn’t formal or announced, just instinctive—a shared understanding rooted in custom and care. Plates were filled with biryani, lamb curry, haleem, pulao, spiced vegetables, and milk cake. Conversations flowed as food was passed from hand to hand. Nearby, the children laughed and tumbled through the reservoir’s play area, while the women gathered in their own corner—shawls drawn, tea in hand—waiting with familiar patience and good-humoured chatter for their turn at the spread.
 
@@ -41,7 +41,7 @@ And of course, the **teasing began**.
 
 Haircuts were up for critique, as were cricket team allegiances and political loyalties. Some offered sharp one-liners that left everyone speechless before bursting into laughter. It was the kind of banter that only works in a group where there’s deep affection beneath every
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/image-2b-1024x768.jpg -->
+![Walkers resting on the grass beside Tittesworth Reservoir with cups of tea in hand, a young man smiling into the camera in the foreground](/images/blog/after-the-feast-tea-break-by-the-reservoir.jpg)
 
 ## The Quiet Work of Healing
 
@@ -49,7 +49,7 @@ For me, this wasn’t just a walk. It was a **marker**—a small but meaningful 
 
 I have written before about how healing isn’t just about treatment or rest. It’s also about **reconnection**. With people. With nature. With joy. This walk reminded me again: you don’t always need a deep conversation about illness to feel seen. Sometimes, someone handing you tea without asking is enough. Sometimes, being included in the teasing means you’re still *you*—whole, welcome, and alive in the eyes of your community.
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/image-3-1024x768.jpg -->
+![Three of the walkers talking and laughing together in a green field, one of them seated on a bench](/images/blog/after-the-feast-conversation-on-the-walk.jpg)
 
 ## Why These Days Matter
 
@@ -61,4 +61,4 @@ To everyone who came: thank you. For the food, the fun, the memories, and the lo
 
 You’re not alone on the trail.
 
-<!-- IMAGE TO BE MIGRATED: https://amirkhesro.com/wp-content/uploads/2025/06/imagw-final-1024x768.jpg -->
+![Eight of the walkers standing shoulder to shoulder on the path for a group photograph at the end of the walk](/images/blog/after-the-feast-group-photo.jpg)

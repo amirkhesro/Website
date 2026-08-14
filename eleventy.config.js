@@ -16,6 +16,10 @@ module.exports = function (eleventyConfig) {
     new Date(value).toISOString().slice(0, 10)
   );
 
+  // Copy static assets straight through to the built site.
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/css");
+
   return {
     dir: {
       input: "src",
