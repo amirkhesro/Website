@@ -94,6 +94,16 @@ header nav a:focus-visible {
   text-decoration: underline;
 }
 
+/* The page you are on: darker than the accent and never underlined,
+   so it reads as a label rather than somewhere left to go. */
+header nav a[aria-current="page"],
+header nav a[aria-current="page"]:hover,
+header nav a[aria-current="page"]:focus-visible {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 /* --- Links -------------------------------------------------------------- */
 
 a {
@@ -189,6 +199,64 @@ img {
   margin: 1.75rem 0;
 }
 
+/* Markdown wraps each image in its own paragraph. Where an italic line
+   follows, it is that image's caption, so close the gap and let the two
+   read as one unit instead of the caption drifting toward the next block. */
+p:has(> img):has(+ p > em:first-child) {
+  margin-bottom: 0;
+}
+
+p:has(> img):has(+ p > em:first-child) > img {
+  margin-bottom: 0.5rem;
+}
+
+/* --- Home page ---------------------------------------------------------- */
+
+.intro {
+  font-size: 1.05rem;
+}
+
+/* One column on small screens; two side by side from 40em up. */
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 0 0 1.15rem;
+  padding: 0;
+  list-style: none;
+}
+
+.book-card {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fafbfc;
+}
+
+/* The 2:3 ratio reserves the cover's space now, so nothing shifts
+   down the page once the real artwork is dropped in. */
+.book-cover {
+  width: 100%;
+  max-width: 9rem;
+  aspect-ratio: 2 / 3;
+  margin: 0 0 1rem;
+  border: 1px solid var(--rule);
+  background: #eef1f4;
+  object-fit: cover;
+}
+
+.book-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.book-tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 /* --- Footer ------------------------------------------------------------- */
 
 footer {
@@ -217,5 +285,9 @@ footer p {
 
   h2 {
     font-size: 1.55rem;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }

@@ -7,17 +7,25 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+    {# Home matches exactly; every other item also matches its child pages,
+       so a post at /blog/<slug>/ marks Blog as the current page. #}
+    {% set navItems = [
+      { url: "/", label: "Home" },
+      { url: "/whispers-through-the-fog/", label: "Whispers Through The Fog" },
+      { url: "/acoustic-neuroma-handbook/", label: "The Acoustic Neuroma Handbook" },
+      { url: "/signed-copies/", label: "Signed Copies" },
+      { url: "/for-bookshops/", label: "For Bookshops" },
+      { url: "/blog/", label: "Blog" },
+      { url: "/about/", label: "About" },
+      { url: "/connect/", label: "Connect" }
+    ] %}
     <header>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/whispers-through-the-fog/">Whispers Through The Fog</a></li>
-          <li><a href="/acoustic-neuroma-handbook/">The Acoustic Neuroma Handbook</a></li>
-          <li><a href="/signed-copies/">Signed Copies</a></li>
-          <li><a href="/for-bookshops/">For Bookshops</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/connect/">Connect</a></li>
+          {% for item in navItems %}
+          {% set isCurrent = (page.url == "/") if item.url == "/" else page.url.startsWith(item.url) %}
+          <li><a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {% endfor %}
         </ul>
       </nav>
     </header>

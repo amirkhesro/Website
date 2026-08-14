@@ -4,4 +4,44 @@ title: Home
 permalink: /index.html
 ---
 <h1>Amir Khesro</h1>
-<p>Placeholder text for the home page.</p>
+
+<!-- INTRODUCTION TO BE WRITTEN -->
+<p class="intro">[Placeholder: one sentence introducing Amir Khesro — who he is and what he writes.]</p>
+
+<section>
+  <h2>The books</h2>
+
+  <ul class="book-grid">
+    <li class="book-card">
+      <!-- COVER IMAGE TO BE ADDED -->
+      <img class="book-cover" src="" alt="Front cover of Whispers Through The Fog by Amir Khesro">
+      <h3 class="book-title"><a href="/whispers-through-the-fog/">Whispers Through The Fog</a></h3>
+      <!-- TAGLINE TO BE WRITTEN -->
+      <p class="book-tagline">[Placeholder: one line describing the memoir.]</p>
+    </li>
+
+    <li class="book-card">
+      <!-- COVER IMAGE TO BE ADDED -->
+      <img class="book-cover" src="" alt="Front cover of The Acoustic Neuroma Handbook by Amir Khesro">
+      <h3 class="book-title"><a href="/acoustic-neuroma-handbook/">The Acoustic Neuroma Handbook</a></h3>
+      <!-- TAGLINE TO BE WRITTEN -->
+      <p class="book-tagline">[Placeholder: one line describing the handbook.]</p>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>From the blog</h2>
+
+  {% set recent = collections.posts | reverse %}
+  <ul>
+    {% for post in recent.slice(0, 3) %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="/blog/">All posts</a></p>
+</section>
