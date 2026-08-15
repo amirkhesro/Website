@@ -3,3 +3,6 @@ node_modules/
 
 # Built site
 _site/
+
+# Full size source images. The web sized versions live in src/images.
+originals/

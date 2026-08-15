@@ -279,6 +279,17 @@ p:has(> img):has(+ p > em:first-child) > img {
   font-size: 0.9rem;
 }
 
+/* --- About page --------------------------------------------------------- */
+
+/* The author photo sits at the top of the page. Modest width, matching the
+   treatment the book covers get, so it reads as part of the page rather
+   than dominating it. */
+.author-photo {
+  max-width: 12rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
 /* --- Footer ------------------------------------------------------------- */
 
 footer {
