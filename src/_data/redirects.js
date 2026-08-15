@@ -38,6 +38,11 @@ const postSlugs = [
 // WordPress shop, which signed copies now replaces. The disclaimer is no
 // longer a page of its own; its wording lives in the footer of every page.
 const pages = [
+  // WordPress serves a static front page at the root and, at the same time,
+  // under its own slug. Only the root is in the content inventory, but Search
+  // Console shows /home/ still being crawled, so the second address was in use
+  // as well and is sent to the same place.
+  { from: "/home/", to: "/" },
   { from: "/blogs/", to: "/blog/" },
   // A post on the old site, but only ever a placeholder reading "To be
   // shared soon". It was left out of the migration, so it goes to the blog
