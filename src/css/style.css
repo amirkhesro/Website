@@ -305,6 +305,12 @@ footer p {
   margin: 0;
 }
 
+/* The health disclaimer sits below the copyright line. Same quiet footer
+   treatment, with a little space above so the two read as separate notes. */
+.footer-disclaimer {
+  margin-top: 0.6rem;
+}
+
 /* --- Larger screens ----------------------------------------------------- */
 
 @media (min-width: 40em) {
