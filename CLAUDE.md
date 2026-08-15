@@ -52,7 +52,7 @@ and the automatic meta description. A post needs only `title` and `date` in its 
   now points. Adding a post does **not** create a redirect; this list records only what the old
   site actually published.
 - `src/images/` — web-sized images: `covers/` (book covers, three widths each), `blog/` (post
-  images), and the author photo at three widths.
+  images), and the author photo at four widths (see the author photograph note below).
 - `src/fonts/` — the Lora webfont files, self-hosted.
 - `src/downloads/` — five free PDF worksheets linked from the site.
 - `src/robots.txt` — copied through unchanged; allows all crawlers and points to the sitemap.
@@ -132,23 +132,41 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
     `/images/covers/whispers-through-the-fog-1200.jpg` and
     `/images/covers/acoustic-neuroma-handbook-1200.jpg` — named in their front matter as
     `shareImage` with `shareImageWidth` and `shareImageHeight`;
-  - **`/images/amir-khesro-1200.jpg` at 1200×1211** for every other page and all posts, which is
-    the fallback in `base.njk`.
+  - **`/images/amir-khesro-reading-1200.jpg` at 1200×1600** for every other page and all posts,
+    which is the fallback in `base.njk`.
 
-  Any page can override the image by setting those three keys in its front matter. All three now
-  meet the 1200px width that Facebook, LinkedIn and X prefer. They are share images only —
-  nothing on the site displays them.
+  Any page can override the image by setting those three keys in its front matter. All three
+  meet the 1200px width that Facebook, LinkedIn and X prefer.
 
-  **`/images/amir-khesro-1200.jpg` is a different photograph from the author photo on the page.**
-  It comes from `originals/amir-khesro-2023.jpg` (1761×1777, git-ignored like the rest of
-  `originals/`), whereas the photo shown on the about page is the older picture at
-  `/images/amir-khesro-224|448|672.jpg`. The two have different proportions, so the 1200 file
-  must **not** be appended to that `srcset` — browsers would sometimes show a different picture.
-  The `-960` covers likewise stay in place; the book pages still display them.
+  The cover share images are share images only — nothing on the site displays them. The author
+  share image is the exception: it is the same photograph the about page shows, only larger.
 
-  The 1200px files were resized once from `assets/covers/*` and `originals/amir-khesro-2023.jpg`
-  using Windows' built-in System.Drawing via PowerShell, at JPEG quality 85. No image dependency
-  was added to the project; repeat the same way if new sizes are ever needed.
+- **The author photograph.** The picture in use is the 2025 one of the author reading from a
+  book at a lectern, from `originals/amir-khesro-reading-2025.jpg` (1500×2000, git-ignored like
+  the rest of `originals/`). It is a **3:4 portrait**, unlike the near-square photograph it
+  replaced, and it exists at four widths, all of the source's own proportions with nothing
+  cropped:
+
+  | File | Size | Used for |
+  |---|---|---|
+  | `/images/amir-khesro-reading-224.jpg` | 224×299 | about page `src`, and the 1× `srcset` entry |
+  | `/images/amir-khesro-reading-448.jpg` | 448×597 | about page `srcset` |
+  | `/images/amir-khesro-reading-672.jpg` | 672×896 | about page `srcset` |
+  | `/images/amir-khesro-reading-1200.jpg` | 1200×1600 | the Open Graph fallback in `base.njk` |
+
+  It is displayed in one place only, `about.njk`, at `sizes="14rem"`. Because the shape changed,
+  `.author-photo` in `style.css` carries `aspect-ratio: 224 / 299` — matching the `src` file
+  exactly, so `object-fit: cover` has nothing to crop. **Changing the photograph again means
+  changing that ratio and the `width`/`height` on the `<img>` to match.**
+
+  **The older photo files — `/images/amir-khesro-224|448|672|1200.jpg` — are still in the
+  repository but nothing references them.** They were kept deliberately, to be deleted in a
+  separate step once the new photograph is confirmed working on the live site. The `-960` covers
+  are different: they stay for good, because the book pages still display them.
+
+  All resized files were made from the originals using Windows' built-in System.Drawing via
+  PowerShell, at JPEG quality 85 with high-quality bicubic interpolation. No image dependency was
+  added to the project; repeat the same way if new sizes are ever needed.
 - Note for SEO work: the site has a `sitemap.xml`, a `robots.txt`, meta descriptions and Open
   Graph tags (see above), but still has **no canonical tags on ordinary pages**. Redirect pages
   are the only places carrying canonical and robots tags. This is a gap, not a deliberate

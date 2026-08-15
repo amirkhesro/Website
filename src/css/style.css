@@ -596,14 +596,15 @@ p:has(> img):has(+ p > em:first-child) > img {
 
 /* --- About page --------------------------------------------------------- */
 
-/* The author photo gets the covers' treatment, at a size judged for its
-   near square shape rather than their 2:3: the same width would read as
-   far heavier on the page. Above the biography by default, alongside it
-   from tablet width up. */
+/* The author photo gets the covers' treatment, at a narrower width than
+   theirs: it is a 3:4 portrait, so the covers' 18rem would read as far
+   heavier on the page. The ratio matches the file exactly, so nothing is
+   cropped. Above the biography by default, alongside it from tablet width
+   up. */
 .author-photo {
   width: 100%;
   max-width: 14rem;
-  aspect-ratio: 224 / 230;
+  aspect-ratio: 224 / 299;
   border: 1px solid var(--rule);
   border-radius: 4px;
   object-fit: cover;
