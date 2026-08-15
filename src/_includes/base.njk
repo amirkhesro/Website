@@ -17,9 +17,13 @@
         matter; everything else falls back to the author photo. Both dimensions
         are stated because a platform that knows them can reserve the space
         before the image itself has arrived. -#}
-    {%- set shareImagePath = shareImage or "/images/amir-khesro-672.jpg" -%}
-    {%- set shareImageW = shareImageWidth or 672 -%}
-    {%- set shareImageH = shareImageHeight or 691 -%}
+    {#- This is the 2023 photograph, and it is used for sharing only. The
+        author photo shown on the page itself is the older one, at 224/448/672;
+        the two are different pictures with different proportions, so this file
+        must not be added to that srcset. -#}
+    {%- set shareImagePath = shareImage or "/images/amir-khesro-1200.jpg" -%}
+    {%- set shareImageW = shareImageWidth or 1200 -%}
+    {%- set shareImageH = shareImageHeight or 1211 -%}
 
     {#- The headline a social platform puts on the card. It defaults to the
         page title, which reads well nearly everywhere; a page whose title is

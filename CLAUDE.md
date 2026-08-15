@@ -128,16 +128,27 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
   bare on its own can set **`shareTitle:`** in its front matter to override it; this changes the
   social card only, never the `<title>` tag or anything visible on the page. The home page uses
   this, because its title is simply "Home". The share image is:
-  - the book's own cover at 960×1440 for the two book pages, named in their front matter as
+  - the book's own cover at **1200×1800** for the two book pages —
+    `/images/covers/whispers-through-the-fog-1200.jpg` and
+    `/images/covers/acoustic-neuroma-handbook-1200.jpg` — named in their front matter as
     `shareImage` with `shareImageWidth` and `shareImageHeight`;
-  - the author photo `/images/amir-khesro-672.jpg` at 672×691 for every other page and all
-    posts, which is the fallback in `base.njk`.
+  - **`/images/amir-khesro-1200.jpg` at 1200×1211** for every other page and all posts, which is
+    the fallback in `base.njk`.
 
-  Any page can override the image by setting those three keys in its front matter. **Both images
-  are narrower than the 1200px that Facebook, LinkedIn and X prefer**, so cards will render at
-  reduced size until larger versions are made. Larger originals exist outside `src/` — the covers
-  in `assets/covers/` are 1600px and 1706px wide — but `originals/profilepicture.png` is only
-  890px, so no author photo at 1200px exists yet.
+  Any page can override the image by setting those three keys in its front matter. All three now
+  meet the 1200px width that Facebook, LinkedIn and X prefer. They are share images only —
+  nothing on the site displays them.
+
+  **`/images/amir-khesro-1200.jpg` is a different photograph from the author photo on the page.**
+  It comes from `originals/amir-khesro-2023.jpg` (1761×1777, git-ignored like the rest of
+  `originals/`), whereas the photo shown on the about page is the older picture at
+  `/images/amir-khesro-224|448|672.jpg`. The two have different proportions, so the 1200 file
+  must **not** be appended to that `srcset` — browsers would sometimes show a different picture.
+  The `-960` covers likewise stay in place; the book pages still display them.
+
+  The 1200px files were resized once from `assets/covers/*` and `originals/amir-khesro-2023.jpg`
+  using Windows' built-in System.Drawing via PowerShell, at JPEG quality 85. No image dependency
+  was added to the project; repeat the same way if new sizes are ever needed.
 - Note for SEO work: the site has a `sitemap.xml`, a `robots.txt`, meta descriptions and Open
   Graph tags (see above), but still has **no canonical tags on ordinary pages**. Redirect pages
   are the only places carrying canonical and robots tags. This is a gap, not a deliberate
