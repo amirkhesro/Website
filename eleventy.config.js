@@ -50,6 +50,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon-16x16.png");
   eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 
+  // The custom domain. GitHub Pages reads this from the root of what is
+  // published, so with the Actions deployment it has to travel inside the
+  // uploaded _site rather than sitting in the repository root.
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+
   return {
     dir: {
       input: "src",
