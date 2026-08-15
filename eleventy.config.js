@@ -40,6 +40,7 @@ module.exports = function (eleventyConfig) {
   // Copy static assets straight through to the built site.
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/downloads");
 
   return {

@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }} | Amir Khesro</title>
+    {# The Latin cut of Lora carries almost every page. Fetching it alongside
+       the stylesheet rather than after it spares the reader a flash of
+       fallback type. crossorigin is required even same origin for fonts. #}
+    <link rel="preload" href="/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>

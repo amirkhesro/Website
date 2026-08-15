@@ -1,21 +1,85 @@
 /* ==========================================================================
    Base stylesheet — amirkhesro.com
-   Mobile first. No framework, no JavaScript, no web fonts.
+   Mobile first. No framework, no JavaScript. Lora is self hosted: nothing
+   is fetched from Google, or anywhere else, when a page loads.
    ========================================================================== */
 
-/* --- Design tokens ------------------------------------------------------ */
+/* --- Typeface ------------------------------------------------------------
+   Lora, as a variable font covering weights 400 to 700 in one file per
+   subset, so regular and bold cost a single download rather than two.
+   Latin and Latin Extended only: enough for English plus accented names
+   and place names, without carrying Cyrillic or maths symbols nobody here
+   will read. Licence in /src/fonts/OFL.txt.
+   ------------------------------------------------------------------------ */
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/lora-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/lora-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+    U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/lora-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/lora-italic-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+    U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+/* --- Design tokens -------------------------------------------------------
+   The palette is drawn from the book covers. The accent is the misty pine
+   green behind the title on Whispers Through the Fog; the background and
+   ink are warmed to sit with it rather than fighting it. Contrast ratios
+   below are against --bg and were measured, not estimated.
+   ------------------------------------------------------------------------ */
 
 :root {
-  --text: #2e2e2e;            /* dark grey body text */
-  --muted: #63676b;           /* dates, footer */
-  --accent: #1f4e79;          /* deep muted blue */
-  --accent-hover: #143551;
-  --accent-visited: #3c5d7d;  /* deliberately close to --accent */
-  --rule: #e2e5e8;            /* hairline borders */
-  --bg: #fff;
+  --bg: #faf7f2;              /* warm off white, never pure white */
+  --text: #1a1a18;            /* deep near black ink        16.3:1 */
+  --muted: #55524c;           /* dates, footer               7.3:1 */
+  --accent: #2d5a45;          /* forest green, from the cover 7.4:1 */
+  --accent-hover: #1f4331;    /* the same green, deeper     10.3:1 */
+  --accent-visited: #3f6b56;  /* deliberately close to --accent 5.7:1 */
+  --rule: #e6e0d6;            /* hairline borders, warm */
+  --card: #fffdfa;            /* a shade lighter than the page */
+  --placeholder: #ece6db;     /* space held for a cover while it loads */
 
-  --measure: 42rem;           /* content column width */
-  --gutter: 1.25rem;          /* keeps text off the screen edge */
+  --measure: 47.25rem;        /* content column width */
+  --gutter: 1.4rem;           /* keeps text off the screen edge */
+
+  --serif: "Lora", Georgia, "Times New Roman", serif;
 }
 
 /* --- Base --------------------------------------------------------------- */
@@ -26,10 +90,11 @@
   box-sizing: border-box;
 }
 
-/* 112.5% of the 16px default = an 18px base, so rem units scale with it
-   and still respect the reader's own browser font size. */
+/* The reader's own browser setting is the baseline; body then takes it up
+   a notch. Every rem on the page is measured against that untouched root,
+   so someone who has enlarged their default still gets it honoured. */
 html {
-  font-size: 112.5%;
+  font-size: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -37,10 +102,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 /* --- Layout ------------------------------------------------------------- */
@@ -57,8 +121,8 @@ footer {
 }
 
 main {
-  padding-top: 2.5rem;
-  padding-bottom: 3rem;
+  padding-top: 2.8rem;
+  padding-bottom: 3.4rem;
 }
 
 /* --- Header and navigation ---------------------------------------------- */
@@ -68,15 +132,15 @@ header {
 }
 
 header nav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.15rem;
+  padding-bottom: 1.15rem;
 }
 
 /* Horizontal row of links that wraps onto more lines when space runs out. */
 header nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 1.15rem;
+  gap: 0.45rem 1.3rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -84,8 +148,8 @@ header nav ul {
 
 header nav a {
   display: inline-block;
-  padding: 0.15rem 0;
-  font-size: 0.9rem;
+  padding: 0.17rem 0;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -122,51 +186,91 @@ a:focus-visible {
   text-decoration-thickness: 2px;
 }
 
-/* --- Headings ----------------------------------------------------------- */
+/* --- Buttons ------------------------------------------------------------
+   The accent carrying white text, which clears AAA at 7.9:1. Nothing on
+   the site uses this yet; it is here so that anything that becomes a
+   button later inherits the palette instead of inventing its own.
+   ------------------------------------------------------------------------ */
+
+.button,
+button,
+input[type="submit"] {
+  display: inline-block;
+  padding: 0.6rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:visited {
+  color: #fff;
+}
+
+.button:hover,
+.button:focus-visible,
+button:hover,
+button:focus-visible,
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+/* --- Headings -----------------------------------------------------------
+   Sizes step 1.9x, 1.4x, 1.1x against the body text, so the three levels
+   stay clearly apart from one another without any of them shouting.
+   ------------------------------------------------------------------------ */
 
 h1,
 h2,
 h3 {
+  font-family: var(--serif);
   line-height: 1.25;      /* tighter than body copy */
   font-weight: 700;
   text-wrap: balance;
 }
 
 h1 {
-  margin: 0 0 1rem;
-  font-size: 1.9rem;
+  margin: 0 0 1.15rem;
+  font-size: 2.1rem;      /* 1.91x body */
   letter-spacing: -0.01em;
 }
 
 h2 {
-  margin: 2.5rem 0 0.75rem;
-  font-size: 1.4rem;
+  margin: 2.8rem 0 0.85rem;
+  font-size: 1.55rem;     /* 1.41x body */
 }
 
 h3 {
-  margin: 2rem 0 0.6rem;
-  font-size: 1.1rem;
+  margin: 2.25rem 0 0.7rem;
+  font-size: 1.25rem;     /* 1.14x body */
 }
 
 /* --- Body copy ---------------------------------------------------------- */
 
 p {
-  margin: 0 0 1.15rem;
+  margin: 0 0 1.3rem;
 }
 
 ul,
 ol {
-  margin: 0 0 1.15rem;
-  padding-left: 1.5rem;
+  margin: 0 0 1.3rem;
+  padding-left: 1.7rem;
 }
 
 li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
 blockquote {
-  margin: 1.75rem 0;
-  padding-left: 1.1rem;
+  margin: 2rem 0;
+  padding-left: 1.25rem;
   border-left: 3px solid var(--rule);
 }
 
@@ -177,15 +281,15 @@ blockquote p:last-child {
 /* Attribution line under a quotation. */
 blockquote cite {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: 0.55rem;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-style: normal;
 }
 
 hr {
   height: 0;
-  margin: 2.5rem 0;
+  margin: 2.8rem 0;
   border: 0;
   border-top: 1px solid var(--rule);
 }
@@ -193,7 +297,7 @@ hr {
 /* Post and listing dates. Kept on one line so a date never breaks in half. */
 time {
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   white-space: nowrap;
 }
 
@@ -204,7 +308,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1.75rem 0;
+  margin: 2rem 0;
 }
 
 /* Markdown wraps each image in its own paragraph. Where an italic line
@@ -215,42 +319,42 @@ p:has(> img):has(+ p > em:first-child) {
 }
 
 p:has(> img):has(+ p > em:first-child) > img {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
 }
 
 /* --- Home page ---------------------------------------------------------- */
 
 .intro {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 /* One column on small screens; two side by side from 40em up. */
 .book-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin: 0 0 1.15rem;
+  gap: 1.4rem;
+  margin: 0 0 1.3rem;
   padding: 0;
   list-style: none;
 }
 
 .book-card {
   margin: 0;
-  padding: 1.25rem;
+  padding: 1.4rem;
   border: 1px solid var(--rule);
   border-radius: 4px;
-  background: #fafbfc;
+  background: var(--card);
 }
 
 /* The 2:3 ratio reserves the cover's space now, so nothing shifts
    down the page once the real artwork is dropped in. */
 .book-cover {
   width: 100%;
-  max-width: 9rem;
+  max-width: 10.1rem;
   aspect-ratio: 2 / 3;
-  margin: 0 0 1rem;
+  margin: 0 0 1.15rem;
   border: 1px solid var(--rule);
-  background: #eef1f4;
+  background: var(--placeholder);
   object-fit: cover;
 }
 
@@ -258,7 +362,7 @@ p:has(> img):has(+ p > em:first-child) > img {
    fill the whole column. The width/height attributes keep its space
    reserved while it loads. */
 .book-cover-full {
-  max-width: 17rem;
+  max-width: 19.1rem;
   border: 1px solid var(--rule);
 }
 
@@ -269,14 +373,14 @@ p:has(> img):has(+ p > em:first-child) > img {
 }
 
 .book-title {
-  margin: 0 0 0.35rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
 }
 
 .book-tagline {
   margin: 0;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* --- About page --------------------------------------------------------- */
@@ -285,7 +389,7 @@ p:has(> img):has(+ p > em:first-child) > img {
    treatment the book covers get, so it reads as part of the page rather
    than dominating it. */
 .author-photo {
-  max-width: 12rem;
+  max-width: 13.5rem;
   border: 1px solid var(--rule);
   border-radius: 4px;
 }
@@ -293,37 +397,38 @@ p:has(> img):has(+ p > em:first-child) > img {
 /* --- Footer ------------------------------------------------------------- */
 
 footer {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  padding-bottom: 2.5rem;
+  margin-top: 3.4rem;
+  padding-top: 1.7rem;
+  padding-bottom: 2.8rem;
   border-top: 1px solid var(--rule);
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 footer p {
   margin: 0;
 }
 
-/* The health disclaimer sits below the copyright line. Same quiet footer
-   treatment, with a little space above so the two read as separate notes. */
+/* The health disclaimer sits below the copyright line. Quiet, but still
+   at 7.3:1 against the page: small print a reader can actually read. */
 .footer-disclaimer {
-  margin-top: 0.6rem;
+  margin-top: 0.7rem;
+  line-height: 1.6;
 }
 
 /* --- Larger screens ----------------------------------------------------- */
 
 @media (min-width: 40em) {
   main {
-    padding-top: 3.5rem;
+    padding-top: 3.9rem;
   }
 
   h1 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   h2 {
-    font-size: 1.55rem;
+    font-size: 1.7rem;
   }
 
   .book-grid {
