@@ -139,7 +139,8 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
   meet the 1200px width that Facebook, LinkedIn and X prefer.
 
   The cover share images are share images only — nothing on the site displays them. The author
-  share image is the exception: it is the same photograph the about page shows, only larger.
+  share image is the exception: it is the same photograph the about page shows, only larger. The
+  `-960` covers stay in place regardless: the book pages still display them.
 
 - **The author photograph.** The picture in use is the 2025 one of the author reading from a
   book at a lectern, from `originals/amir-khesro-reading-2025.jpg` (1500×2000, git-ignored like
@@ -159,10 +160,8 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
   exactly, so `object-fit: cover` has nothing to crop. **Changing the photograph again means
   changing that ratio and the `width`/`height` on the `<img>` to match.**
 
-  **The older photo files — `/images/amir-khesro-224|448|672|1200.jpg` — are still in the
-  repository but nothing references them.** They were kept deliberately, to be deleted in a
-  separate step once the new photograph is confirmed working on the live site. The `-960` covers
-  are different: they stay for good, because the book pages still display them.
+  The near-square photograph it replaced — the older `amir-khesro-224|448|672|1200.jpg` files —
+  has been deleted; the four files above are the only author photo in the repository.
 
   All resized files were made from the originals using Windows' built-in System.Drawing via
   PowerShell, at JPEG quality 85 with high-quality bicubic interpolation. No image dependency was
