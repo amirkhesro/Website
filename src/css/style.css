@@ -126,7 +126,7 @@ body {
 
 /* One centred column. The borders on header and footer run full width,
    while their contents line up with the text. */
-header nav,
+.header-inner,
 main,
 footer {
   max-width: var(--measure);
@@ -164,19 +164,108 @@ main > section > :first-child,
   margin-top: 0;
 }
 
-/* --- Header and navigation ---------------------------------------------- */
+/* --- Header and navigation -----------------------------------------------
+   One bar across the top: the name on the left, the page links on the
+   right. Below the breakpoint where the whole row fits, the links collapse
+   behind a button — but only where the script driving that button is
+   running. Without it the button never appears and the links sit on the
+   page as an ordinary stacked list, which is the state this section is
+   written from: everything the script needs is added on top of it.
+   ------------------------------------------------------------------------ */
 
 header {
   border-bottom: 1px solid var(--rule);
 }
 
-header nav {
-  padding-top: 1.15rem;
-  padding-bottom: 1.15rem;
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
 }
 
-/* Horizontal row of links that wraps onto more lines when space runs out. */
-header nav ul {
+/* Pushes everything after it to the right of the bar. */
+.site-title {
+  margin-right: auto;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-title:visited {
+  color: var(--text);
+}
+
+.site-title:hover,
+.site-title:focus-visible {
+  color: var(--accent);
+}
+
+/* --- The menu button -----------------------------------------------------
+   Hidden until the script announces itself, so it can never be a control
+   that does nothing. It is a <button>, so the site's button styling has to
+   be undone: this one is a plain piece of text with an icon beside it.
+   ------------------------------------------------------------------------ */
+
+.nav-toggle {
+  display: none;
+}
+
+.js .nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.3rem 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.js .nav-toggle:hover,
+.js .nav-toggle:focus-visible {
+  background: none;
+  color: var(--accent-hover);
+}
+
+/* Three rules, drawn rather than fetched. */
+.nav-toggle-icon {
+  position: relative;
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  display: block;
+  width: 1.15rem;
+  height: 2px;
+  background: currentColor;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-icon::before {
+  top: -0.36rem;
+}
+
+.nav-toggle-icon::after {
+  top: 0.36rem;
+}
+
+/* --- The links ---------------------------------------------------------- */
+
+#site-nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem 1.3rem;
@@ -185,26 +274,87 @@ header nav ul {
   list-style: none;
 }
 
-header nav a {
+#site-nav a {
   display: inline-block;
-  padding: 0.17rem 0;
   font-size: 1rem;
   text-decoration: none;
 }
 
-header nav a:hover,
-header nav a:focus-visible {
+#site-nav a:hover,
+#site-nav a:focus-visible {
   text-decoration: underline;
 }
 
 /* The page you are on: darker than the accent and never underlined,
    so it reads as a label rather than somewhere left to go. */
-header nav a[aria-current="page"],
-header nav a[aria-current="page"]:hover,
-header nav a[aria-current="page"]:focus-visible {
+#site-nav a[aria-current="page"],
+#site-nav a[aria-current="page"]:hover,
+#site-nav a[aria-current="page"]:focus-visible {
   color: var(--text);
   font-weight: 600;
   text-decoration: none;
+}
+
+/* --- Narrow screens: the collapsing menu ---------------------------------
+   The list drops onto its own full width row beneath the bar. Where the
+   script is running it starts closed and the button opens it; where it is
+   not, it is simply always there.
+   ------------------------------------------------------------------------ */
+
+@media (max-width: 61.99em) {
+  #site-nav {
+    flex-basis: 100%;
+  }
+
+  .js #site-nav {
+    display: none;
+  }
+
+  .js #site-nav.is-open {
+    display: block;
+  }
+
+  /* One link per row, each a comfortable tap target, divided by the same
+     hairline the rest of the site uses. */
+  #site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0.7rem;
+  }
+
+  #site-nav li {
+    margin: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  #site-nav a {
+    display: block;
+    padding: 0.7rem 0;
+  }
+}
+
+/* --- Wide screens: the whole bar on one row ------------------------------
+   The name and the six links sit on one row inside the same column the
+   text below uses. The breakpoint is where that row comfortably fits.
+   ------------------------------------------------------------------------ */
+
+@media (min-width: 62em) {
+  /* Every link is on the bar, so there is nothing left to open. */
+  .js .nav-toggle {
+    display: none;
+  }
+
+  /* A shade smaller than the stacked version, and closely spaced: seven
+     items and the name have to share one column width, and these are the
+     values that leave the row comfortably inside it rather than filling it
+     to the last pixel. */
+  #site-nav ul {
+    gap: 1.05rem;
+  }
+
+  #site-nav a {
+    font-size: 0.95rem;
+  }
 }
 
 /* --- Links -------------------------------------------------------------- */

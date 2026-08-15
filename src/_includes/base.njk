@@ -16,14 +16,22 @@
     <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    {# Tells the stylesheet a script is running, before anything is painted,
+       so the collapsed menu is styled from the start instead of flashing
+       open. Inline and one line, because a fetched file would arrive too
+       late to prevent that. #}
+    <script>document.documentElement.classList.add("js")</script>
+    <script src="/js/nav.js" defer></script>
   </head>
   <body>
-    {# Home matches exactly; every other item also matches its child pages,
-       so a post at /blog/<slug>/ marks Blog as the current page. #}
+    {# Each item also matches its child pages, so a post at /blog/<slug>/
+       marks Blog as the current page. Home is not in this list: the name at
+       the left of the bar is the link there. The two books are shortened to
+       one word each so the whole bar fits the text column; their full
+       titles are used everywhere else on the site. #}
     {% set navItems = [
-      { url: "/", label: "Home" },
-      { url: "/whispers-through-the-fog/", label: "Whispers Through The Fog" },
-      { url: "/acoustic-neuroma-handbook/", label: "The Acoustic Neuroma Handbook" },
+      { url: "/whispers-through-the-fog/", label: "Whispers" },
+      { url: "/acoustic-neuroma-handbook/", label: "Handbook" },
       { url: "/signed-copies/", label: "Signed Copies" },
       { url: "/for-bookshops/", label: "For Bookshops" },
       { url: "/blog/", label: "Blog" },
@@ -31,14 +39,28 @@
       { url: "/connect/", label: "Connect" }
     ] %}
     <header>
-      <nav>
-        <ul>
-          {% for item in navItems %}
-          {% set isCurrent = (page.url == "/") if item.url == "/" else page.url.startsWith(item.url) %}
-          <li><a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
+      <div class="header-inner">
+        {# The link home, in place of a Home item in the list. On the home
+           page it carries the same marker the list items use. #}
+        <a class="site-title" href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Amir Khesro</a>
+
+        {# Shown only when the script is running. Without it the list below
+           is simply on the page, which is why the button is styled away by
+           default rather than being revealed by default. #}
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+          Menu
+        </button>
+
+        <nav id="site-nav" aria-label="Main">
+          <ul>
+            {% for item in navItems %}
+            {% set isCurrent = page.url.startsWith(item.url) %}
+            <li><a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
