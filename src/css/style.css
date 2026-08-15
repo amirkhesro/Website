@@ -76,6 +76,14 @@
   --card: #fffdfa;            /* a shade lighter than the page */
   --placeholder: #ece6db;     /* space held for a cover while it loads */
 
+  /* Two soft layers: a tight one that seats the cover on the page and a
+     wider, fainter one for the lift. Tinted with the ink rather than pure
+     black so it stays warm. Enough to read as a physical book, not enough
+     to notice as an effect. */
+  --cover-shadow:
+    0 1px 2px rgba(26, 26, 24, 0.07),
+    0 6px 16px rgba(26, 26, 24, 0.10);
+
   --measure: 47.25rem;        /* content column width */
   --gutter: 1.4rem;           /* keeps text off the screen edge */
 
@@ -346,24 +354,39 @@ p:has(> img):has(+ p > em:first-child) > img {
   background: var(--card);
 }
 
-/* The 2:3 ratio reserves the cover's space now, so nothing shifts
-   down the page once the real artwork is dropped in. */
+/* Both covers are exactly 2:3 at source, so declaring that ratio matches
+   the artwork rather than cropping it, and holds the space while the
+   image loads. The pair stay the same shape and size wherever they sit
+   together. Width is a percentage first and a maximum second: on a narrow
+   phone the cover shrinks to the card instead of forcing the page sideways. */
 .book-cover {
   width: 100%;
-  max-width: 10.1rem;
+  max-width: 17rem;
   aspect-ratio: 2 / 3;
   margin: 0 0 1.15rem;
   border: 1px solid var(--rule);
   background: var(--placeholder);
   object-fit: cover;
+  box-shadow: var(--cover-shadow);
 }
 
-/* Book pages: show the cover at a readable size rather than letting it
-   fill the whole column. The width/height attributes keep its space
-   reserved while it loads. */
+/* Book pages: the cover sits above the description by default, at a size
+   that still leaves the opening paragraphs in view on a phone. */
 .book-cover-full {
-  max-width: 19.1rem;
+  width: 100%;
+  max-width: 20rem;
+  aspect-ratio: 2 / 3;
   border: 1px solid var(--rule);
+  background: var(--placeholder);
+  object-fit: cover;
+  box-shadow: var(--cover-shadow);
+}
+
+/* Contains the float below, so a cover or photo can never reach past the
+   text it sits beside into the sections that follow it. */
+.book-lede,
+.about-lede {
+  display: flow-root;
 }
 
 /* The cover on a home page card is a link to that book's page. */
@@ -385,13 +408,18 @@ p:has(> img):has(+ p > em:first-child) > img {
 
 /* --- About page --------------------------------------------------------- */
 
-/* The author photo sits at the top of the page. Modest width, matching the
-   treatment the book covers get, so it reads as part of the page rather
-   than dominating it. */
+/* The author photo gets the covers' treatment, at a size judged for its
+   near square shape rather than their 2:3: the same width would read as
+   far heavier on the page. Above the biography by default, alongside it
+   from tablet width up. */
 .author-photo {
-  max-width: 13.5rem;
+  width: 100%;
+  max-width: 14rem;
+  aspect-ratio: 224 / 230;
   border: 1px solid var(--rule);
   border-radius: 4px;
+  object-fit: cover;
+  box-shadow: var(--cover-shadow);
 }
 
 /* --- Footer ------------------------------------------------------------- */
@@ -433,5 +461,35 @@ footer p {
 
   .book-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Book and About pages, wider screens ---------------------------------
+   Once the column is wide enough to carry two things side by side, the
+   cover or photo moves alongside the text. A float rather than a grid
+   column: the text runs several times the height of the image, so it
+   should close back over the full width underneath rather than leaving a
+   tall empty channel.
+   ------------------------------------------------------------------------ */
+
+@media (min-width: 48em) {
+  .book-lede .book-cover-full,
+  .about-lede .author-photo {
+    float: left;
+    margin: 0.35rem 2rem 1.5rem 0;
+  }
+
+  .book-lede .book-cover-full {
+    width: 18rem;
+  }
+
+  .about-lede .author-photo {
+    width: 14rem;
+  }
+
+  /* Bring the description's heading up level with the top of the cover
+     instead of starting below it. */
+  .book-lede section > h2:first-child {
+    margin-top: 0;
   }
 }
