@@ -119,7 +119,21 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
   adding `description:` to its front matter, and that always wins.** `base.njk` picks between
   the two. The 404 page has neither and so gets no tag, which is deliberate; redirect pages do
   not use `base.njk` at all.
-- Note for SEO work: the site has a `sitemap.xml`, a `robots.txt` and meta descriptions (see
-  above), but still has **no Open Graph tags and no canonical tags on ordinary pages**. Redirect
-  pages are the only places carrying canonical and robots tags. These are gaps, not deliberate
-  removals.
+- **Social sharing**: `base.njk` writes Open Graph tags and a `twitter:card` alongside the meta
+  description, reusing the very same description so the wording is only ever written once.
+  `og:type` is `article` for blog posts and `website` for everything else, and all addresses are
+  absolute — social platforms cannot resolve relative ones. The share image is:
+  - the book's own cover at 960×1440 for the two book pages, named in their front matter as
+    `shareImage` with `shareImageWidth` and `shareImageHeight`;
+  - the author photo `/images/amir-khesro-672.jpg` at 672×691 for every other page and all
+    posts, which is the fallback in `base.njk`.
+
+  Any page can override the image by setting those three keys in its front matter. **Both images
+  are narrower than the 1200px that Facebook, LinkedIn and X prefer**, so cards will render at
+  reduced size until larger versions are made. Larger originals exist outside `src/` — the covers
+  in `assets/covers/` are 1600px and 1706px wide — but `originals/profilepicture.png` is only
+  890px, so no author photo at 1200px exists yet.
+- Note for SEO work: the site has a `sitemap.xml`, a `robots.txt`, meta descriptions and Open
+  Graph tags (see above), but still has **no canonical tags on ordinary pages**. Redirect pages
+  are the only places carrying canonical and robots tags. This is a gap, not a deliberate
+  removal.

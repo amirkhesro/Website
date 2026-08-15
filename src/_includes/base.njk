@@ -4,15 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }} | Amir Khesro</title>
-    {# The sentence a search engine shows under the page title. Ordinary pages
-       set "description" in their front matter. Blog posts fall back to
-       autoDescription, which posts.11tydata.js builds from the opening of the
-       post, so a new post is never left without one; a post that sets its own
-       "description" wins. Anything with neither — the 404 page — gets no tag
-       at all, which is better than an invented one. #}
-    {%- set metaDescription = description or autoDescription %}
+    {#- The sentence a search engine shows under the page title. Ordinary pages
+        set "description" in their front matter. Blog posts fall back to
+        autoDescription, which posts.11tydata.js builds from the opening of the
+        post, so a new post is never left without one; a post that sets its own
+        "description" wins. Anything with neither — the 404 page — gets no tag
+        at all, which is better than an invented one. -#}
+    {%- set metaDescription = description or autoDescription -%}
+
+    {#- The picture, and its size, that a social platform shows alongside a
+        shared link. The two book pages name their own cover in their front
+        matter; everything else falls back to the author photo. Both dimensions
+        are stated because a platform that knows them can reserve the space
+        before the image itself has arrived. -#}
+    {%- set shareImagePath = shareImage or "/images/amir-khesro-672.jpg" -%}
+    {%- set shareImageW = shareImageWidth or 672 -%}
+    {%- set shareImageH = shareImageHeight or 691 -%}
+
+    {#- A post is anything under /blog/ other than the index itself. -#}
+    {%- set isPost = page.url.startsWith("/blog/") and page.url != "/blog/" -%}
+
+    {#- A page with nothing to say about itself — only the 404 page — is left
+        out of all of this rather than being given an invented description or
+        offered for sharing. The redirect pages never reach here: they have no
+        layout of their own. -#}
     {%- if metaDescription %}
     <meta name="description" content="{{ metaDescription }}">
+    {#- Open Graph, read by Facebook, LinkedIn, WhatsApp, Slack and the rest.
+        The description is the same one the tag above uses, so the wording can
+        only ever be written once. Addresses are absolute because a platform
+        fetching these tags has no page to resolve a relative path against. #}
+    <meta property="og:site_name" content="Amir Khesro">
+    <meta property="og:type" content="{{ "article" if isPost else "website" }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    <meta property="og:url" content="https://amirkhesro.com{{ page.url }}">
+    <meta property="og:image" content="https://amirkhesro.com{{ shareImagePath }}">
+    <meta property="og:image:width" content="{{ shareImageW }}">
+    <meta property="og:image:height" content="{{ shareImageH }}">
+    {#- X/Twitter needs only to be told which card to draw; it reads the title,
+        description and image from the Open Graph tags above. #}
+    <meta name="twitter:card" content="summary_large_image">
     {%- endif %}
     {# The Latin cut of Lora carries almost every page. Fetching it alongside
        the stylesheet rather than after it spares the reader a flash of
