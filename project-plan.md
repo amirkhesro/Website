@@ -5,11 +5,11 @@ Agreed plan of record for rebuilding the author website as a static site hosted 
 **Date agreed:** 14 August 2026
 **Status:** Planning complete for structure. Build not started.
 
-Companion documents in this folder:
+Companion documents in `docs/`:
 
-- [`content-inventory.md`](content-inventory.md) — full text capture of the existing WordPress site
-  (41 URLs: 13 pages, 2 products, 2 category archives, 24 posts)
-- [`content-mapping.md`](content-mapping.md) — page-by-page mapping of old content onto the new
+- [`content-inventory.md`](docs/content-inventory.md) — full text capture of the existing WordPress
+  site (41 URLs: 13 pages, 2 products, 2 category archives, 24 posts)
+- [`content-mapping.md`](docs/content-mapping.md) — page-by-page mapping of old content onto the new
   structure, plus the complete URL and redirect map
 
 ---
