@@ -89,18 +89,59 @@ Nothing failed to convert, but five things are worth a decision. All five are pr
 
 1. **A podcast button with no link at all.** In `balance-problems-in-acoustic-neuroma-when-walking-feels-like-being-drunk-without-the-drink.md`, the "Spotify Podcast" button on the live site has no `href` — it is a dead button. It has been carried over as the plain text `Spotify Podcast`. Supply the episode URL and it can become a link.
 
+   **Closed — 15 August 2026.** No longer needed; the whole block was removed. See *Post-migration changes*.
+
 2. **A podcast button with a broken link.** In `what-are-cros-hearing-aids-and-how-do-they-help-with-single-sided-deafness.md`, the "Spotify Podcast" button's `href` is not a URL — an entire paragraph of promotional copy was pasted into the link field, prefixed with `http://`. It has been carried over as plain text rather than an unusable link. The intended target appears inside that pasted text: `https://open.spotify.com/episode/0wugXqRIclKN6ooOuolKLw`, though it is truncated there, so please confirm before using it.
+
+   **Closed — 15 August 2026.** No longer needed; the whole block was removed. See *Post-migration changes*.
 
 3. **A gallery block that the API renders empty.** `from-surgery-to-sand-my-leap-back-to-life.md` ends with a WordPress gallery that the REST API returns with no images inside. The image was recovered from the media library (attachment of post 4170) and recorded in the usual comment. Worth a glance against the live page in case the gallery held more than one image at some point.
 
-4. **Six posts invite replies "in the comments".** The static site has no comment system, so these calls to action now point nowhere: `balance-problems…`, `clearing-the-haze…`, `learning-to-hear-again…`, `tinnitus-in-acoustic-neuroma…`, `what-are-cros-hearing-aids…` and `when-the-brain-loses-its-map…`. Either reword them to point at the Connect page or the Facebook group, or plan a comments solution.
+4. **Six posts invite replies "in the comments".** ~~The static site has no comment system, so these calls to action now point nowhere: `balance-problems…`, `clearing-the-haze…`, `learning-to-hear-again…`, `tinnitus-in-acoustic-neuroma…`, `what-are-cros-hearing-aids…` and `when-the-brain-loses-its-map…`. Either reword them to point at the Connect page or the Facebook group, or plan a comments solution.~~
+
+   **Resolved — 15 August 2026.** All six were removed or reworded; see *Comment invitations removed* below.
 
 5. **Seven posts have no headings.** `the-why-me…`, `when-the-brain-loses-its-map…`, `what-is-cerebrospinal-fluid…`, `the-cocktail-party-effect…`, `learning-to-hear-again…`, `brain-fog…` and `facing-the-fog…` use bold paragraphs where headings would normally go — that is how they are authored on WordPress, so it has been preserved rather than invented. Several are long, and would read better with real headings.
+
+## Post-migration changes
+
+Edits made to the migrated posts after the migration run, recorded so this report stays an accurate account of what is on the site. Both sets of changes were made with the author's paragraph-by-paragraph approval; front matter, images and formatting were left untouched.
+
+### Comment invitations removed — 15 August 2026
+
+The six posts listed in item 4 above. Five had the invitation deleted outright; one was reworded.
+
+| Post | Change |
+|---|---|
+| `balance-problems…` | Removed "Share your experience in the comments. It helps others feel less isolated." |
+| `clearing-the-haze…` | Removed "**Share your story in the comments below, I would love to hear from you.**" |
+| `when-the-brain-loses-its-map…` | Trimmed to "If so, you are not alone." |
+| `learning-to-hear-again…` | Reworded to "Please get in touch." |
+| `what-are-cros-hearing-aids…` | Dropped the closing sentence; the `## Share Your Experience` heading and questions remain |
+| `tinnitus-in-acoustic-neuroma…` | Removed the invitation and the "Your words may help someone…" follow-on |
+
+### YouTube and podcast blocks removed — 15 August 2026
+
+The migration carried over each post's "If you prefer audio…" / "If you prefer visual content…" block with its Spotify and YouTube links, as recorded under *Podcast buttons kept as links* below. All ten were removed at the author's request:
+
+`balance-problems…`, `tinnitus-in-acoustic-neuroma…`, `understanding-the-translabyrinthine…`, `what-is-cerebrospinal-fluid…`, `when-the-brain-loses-its-map…`, `what-are-cros-hearing-aids…`, `teaching-with-acoustic-neuroma`, `the-cocktail-party-effect…`, `the-science-of-sound-localisation…` and `when-half-your-face-goes-quiet…`.
+
+Ordinary prose mentioning listening, watching or podcasts was kept — for example the Bluetooth feature list in `what-are-cros-hearing-aids…` and the classroom passages in `teaching-with-acoustic-neuroma`.
+
+Three of the ten also carried "share your experience" invitations that pointed at the absent comment system. These were reworded rather than deleted, and now link to the Connect page:
+
+| Post | Now reads |
+|---|---|
+| `the-cocktail-party-effect…` | "Please share your experiences through the [Connect page](/connect/). How do you manage in noisy places? …" |
+| `the-science-of-sound-localisation…` | "Please share your experiences through the [Connect page](/connect/). Our story might help someone else feel a little less alone…" |
+| `what-is-cerebrospinal-fluid…` | "…I invite you to share your experience through the [Connect page](/connect/). Your story may help someone else…" |
+
+This also supersedes items 1 and 2 above: the dead "Spotify Podcast" button in `balance-problems…` and the broken one in `what-are-cros-hearing-aids…` were inside the removed blocks, so neither needs a URL now. The original links are preserved in this file's git history if the blocks are ever wanted back.
 
 ## Conversion decisions
 
 - **Headings.** WordPress uses `h3`/`h4`/`h5` inconsistently across posts, mostly because of theme styling rather than document structure. Each post's shallowest heading level is mapped to `##`, with deeper levels stepped down from there, so the hierarchy is preserved and sits correctly beneath the `h1` post title rendered by the layout.
-- **Podcast buttons kept as links.** The `wp-block-buttons` blocks are not share widgets — each one links to that post's Spotify episode. They are genuine content, so they were converted to ordinary Markdown links rather than stripped.
+- **Podcast buttons kept as links.** The `wp-block-buttons` blocks are not share widgets — each one links to that post's Spotify episode. They are genuine content, so they were converted to ordinary Markdown links rather than stripped. (Removed on 15 August 2026 at the author's request — see *Post-migration changes*.)
 - **Line breaks preserved.** Many posts use `<br>` for deliberate one-line-per-thought passages. These are kept as Markdown hard breaks.
 - **Elementor wrappers unwrapped.** Two posts (`understanding-facial-numbness…`, `after-the-feast…`) store their body inside Elementor container divs. The wrappers were discarded and the paragraphs inside kept.
 - **Dates.** Taken from the WordPress publication date in site-local time, which is the date the live site displays.
