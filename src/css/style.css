@@ -610,6 +610,36 @@ p:has(> img):has(+ p > em:first-child) > img {
   box-shadow: var(--cover-shadow);
 }
 
+/* --- Blog page -----------------------------------------------------------
+   A short reading path above the full list, for someone who has just been
+   diagnosed and does not know which post to open first. It borrows the
+   card the home page gives the books: enough to lift it off the page and
+   set it apart from the list below, and nothing beyond that.
+   ------------------------------------------------------------------------ */
+
+.start-here {
+  padding: 1.4rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--card);
+}
+
+/* Smaller than a section heading elsewhere on the site: this is a signpost
+   into the list, not a division of the page. */
+.start-here h2 {
+  font-size: 1.3rem;
+}
+
+.start-here p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* The card's own padding closes the block, so the list adds nothing. */
+.start-here ul {
+  margin-bottom: 0;
+}
+
 /* --- Footer ------------------------------------------------------------- */
 
 footer {

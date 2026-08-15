@@ -5,6 +5,34 @@ permalink: /blog/index.html
 ---
 <h1>Blog</h1>
 
+{# Four posts for a reader who has just been diagnosed and does not know
+   where to start, in a deliberate order rather than the order they were
+   written. Listed by slug and looked up in the posts collection, so the
+   titles and addresses here can never drift from the posts themselves. #}
+{% set startHere = [
+  "you-have-just-been-diagnosed-with-acoustic-neuroma",
+  "the-cocktail-party-effect-and-life-with-one-ear-why-noise-becomes-exhausting",
+  "balance-problems-in-acoustic-neuroma-when-walking-feels-like-being-drunk-without-the-drink",
+  "understanding-fatigue-in-acoustic-neuroma-what-it-is-why-it-happens-and-how-to-manage-it"
+] %}
+<section class="start-here" aria-labelledby="start-here-heading">
+  <h2 id="start-here-heading">Start here</h2>
+  <p>New to acoustic neuroma? These posts are a good place to begin.</p>
+  <ul>
+    {%- for slug in startHere %}
+    {%- for post in collections.posts %}
+    {%- if post.fileSlug == slug %}
+    <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+    {%- endif %}
+    {%- endfor %}
+    {%- endfor %}
+  </ul>
+</section>
+
+{# Everything, newest first. The four above appear here too: this is the
+   full record, not what is left over. #}
+<h2>All posts</h2>
+
 <ul>
   {% for post in collections.posts | reverse %}
     <li>
