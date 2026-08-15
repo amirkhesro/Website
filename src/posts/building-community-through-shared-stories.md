@@ -15,7 +15,7 @@ Because healing rarely happens in isolation. It often begins when stories are sh
 
 If you would like your story to be shared, you are welcome to send it by email.
 
-Email: [info@amirkhesro.com](mailto:info@amirkhesro.com)
+Email: [amir.khesro@outlook.com](mailto:amir.khesro@outlook.com)
 
 You do not need to be a writer. You only need to be honest. Your story may be long or short. It may describe a moment, a struggle, a recovery, or a lesson learned along the way.
 
