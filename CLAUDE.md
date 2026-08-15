@@ -36,8 +36,8 @@ Everything that becomes a published page lives in `src/`. The built site is writ
 | `redirects.njk` | many | Generates one small redirect page per old WordPress address |
 
 **Blog posts**: Markdown files in `src/posts/`. `src/posts/posts.11tydata.js` applies to all of
-them at once — it sets the `post.njk` layout, the `posts` tag, and the `/blog/<file-name>/`
-address. A post needs only `title` and `date` in its front matter.
+them at once — it sets the `post.njk` layout, the `posts` tag, the `/blog/<file-name>/` address,
+and the automatic meta description. A post needs only `title` and `date` in its front matter.
 
 **Shared elements**:
 
@@ -112,7 +112,14 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
 - Never edit `_site/` — it is generated output and is git-ignored. Change the source in `src/`.
 - Do not remove or change entries in `src/_data/redirects.js` without good reason; they keep
   old links and search-engine results working.
-- Note for SEO work: the site has a `sitemap.xml` and a `robots.txt` (see above), but still has
-  **no meta descriptions, no Open Graph tags, and no canonical tags on ordinary pages**.
-  Redirect pages are the only places carrying canonical and robots tags. These are gaps, not
-  deliberate removals.
+- **Meta descriptions**: every ordinary page and every blog post has one. Pages set
+  `description:` in their own front matter. Posts do not need to: `src/posts/posts.11tydata.js`
+  builds one from the opening of the post — plain text, links and formatting stripped, cut at a
+  word boundary near 155 characters. **A post can still be given a hand-written description by
+  adding `description:` to its front matter, and that always wins.** `base.njk` picks between
+  the two. The 404 page has neither and so gets no tag, which is deliberate; redirect pages do
+  not use `base.njk` at all.
+- Note for SEO work: the site has a `sitemap.xml`, a `robots.txt` and meta descriptions (see
+  above), but still has **no Open Graph tags and no canonical tags on ordinary pages**. Redirect
+  pages are the only places carrying canonical and robots tags. These are gaps, not deliberate
+  removals.

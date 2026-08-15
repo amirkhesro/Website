@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }} | Amir Khesro</title>
+    {# The sentence a search engine shows under the page title. Ordinary pages
+       set "description" in their front matter. Blog posts fall back to
+       autoDescription, which posts.11tydata.js builds from the opening of the
+       post, so a new post is never left without one; a post that sets its own
+       "description" wins. Anything with neither — the 404 page — gets no tag
+       at all, which is better than an invented one. #}
+    {%- set metaDescription = description or autoDescription %}
+    {%- if metaDescription %}
+    <meta name="description" content="{{ metaDescription }}">
+    {%- endif %}
     {# The Latin cut of Lora carries almost every page. Fetching it alongside
        the stylesheet rather than after it spares the reader a flash of
        fallback type. crossorigin is required even same origin for fonts. #}
