@@ -10,7 +10,7 @@ present and sell two books:
 - *Whispers Through The Fog* — a memoir of life with an acoustic neuroma
 - *The Acoustic Neuroma Handbook* — a practical guide from diagnosis to recovery
 
-The site also carries a blog of 24 posts about living with an acoustic neuroma, free PDF
+The site also carries a blog of 23 posts about living with an acoustic neuroma, free PDF
 downloads, and pages for buying signed copies and for bookshops ordering by ISBN. It replaces
 an earlier WordPress site, whose old addresses are still redirected (see below).
 
@@ -32,6 +32,7 @@ Everything that becomes a published page lives in `src/`. The built site is writ
 | `about.njk` | `/about/` | Author biography |
 | `connect.njk` | `/connect/` | Contact, via the public address info@amirkhesro.com |
 | `404.njk` | `/404.html` | Not-found page |
+| `sitemap.njk` | `/sitemap.xml` | Sitemap for search engines, generated from the site itself |
 | `redirects.njk` | many | Generates one small redirect page per old WordPress address |
 
 **Blog posts**: Markdown files in `src/posts/`. `src/posts/posts.11tydata.js` applies to all of
@@ -54,6 +55,7 @@ address. A post needs only `title` and `date` in its front matter.
   images), and the author photo at three widths.
 - `src/fonts/` — the Lora webfont files, self-hosted.
 - `src/downloads/` — five free PDF worksheets linked from the site.
+- `src/robots.txt` — copied through unchanged; allows all crawlers and points to the sitemap.
 - `src/CNAME` — the custom domain, copied into the built site so GitHub Pages sees it.
 - Favicon files sit at the top of `src/` so they land at the root of the built site.
 
@@ -110,6 +112,7 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
 - Never edit `_site/` — it is generated output and is git-ignored. Change the source in `src/`.
 - Do not remove or change entries in `src/_data/redirects.js` without good reason; they keep
   old links and search-engine results working.
-- Note for SEO work: the site currently has **no meta descriptions, no Open Graph tags, no
-  canonical tags on ordinary pages, no `sitemap.xml` and no `robots.txt`**. Redirect pages are
-  the only places carrying canonical and robots tags. These are gaps, not deliberate removals.
+- Note for SEO work: the site has a `sitemap.xml` and a `robots.txt` (see above), but still has
+  **no meta descriptions, no Open Graph tags, and no canonical tags on ordinary pages**.
+  Redirect pages are the only places carrying canonical and robots tags. These are gaps, not
+  deliberate removals.

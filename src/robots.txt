@@ -1,0 +1,9 @@
+# The whole site is open to every crawler. The only pages that should stay
+# out of search results are the redirect pages that forward old WordPress
+# addresses, and each of those says so itself with a noindex tag, which is
+# the reliable way to keep a page out of results.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://amirkhesro.com/sitemap.xml

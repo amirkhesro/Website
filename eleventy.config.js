@@ -51,6 +51,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon-16x16.png");
   eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 
+  // robots.txt has no moving parts, so it is copied rather than built. It
+  // belongs at the root, which is where crawlers look for it.
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+
   // The custom domain. GitHub Pages reads this from the root of what is
   // published, so with the Actions deployment it has to travel inside the
   // uploaded _site rather than sitting in the repository root.
