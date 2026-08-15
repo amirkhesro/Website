@@ -1,0 +1,27 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.from }}index.html"
+eleventyExcludeFromCollections: true
+---
+{#- One page per old WordPress address. It has no layout of its own: nothing
+    here should look like part of the site, because nobody is meant to stay
+    long enough to read it. The meta refresh moves the reader, the canonical
+    tag tells search engines which address counts, noindex keeps the page
+    itself out of results, and the link in the body is there for anyone whose
+    browser ignores the refresh. -#}
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ redirect.to }}">
+    <link rel="canonical" href="https://amirkhesro.com{{ redirect.to }}">
+    <meta name="robots" content="noindex">
+    <title>Page moved</title>
+  </head>
+  <body>
+    <p>This page has moved to <a href="{{ redirect.to }}">https://amirkhesro.com{{ redirect.to }}</a>.</p>
+  </body>
+</html>
