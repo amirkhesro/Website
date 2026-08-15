@@ -444,14 +444,6 @@ p:has(> img):has(+ p > em:first-child) > img {
   font-size: 1rem;
 }
 
-/* A quiet note under the buying options, for readers Amazon does not
-   reach. Set in the muted ink at the size of a caption, so it reads as a
-   footnote to the links above rather than competing with them. */
-.buy-note {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 /* --- About page --------------------------------------------------------- */
 
 /* The author photo gets the covers' treatment, at a size judged for its
