@@ -58,14 +58,6 @@ If you are adjusting to SSD, remember:
 Losing one ear does not mean losing your connection to sound, only learning to interpret it differently.  
 Direction may feel uncertain at first, but in time, you rediscover balance, confidence, and a new way to listen to the world.
 
-If you prefer audio, you can listen to the podcast version here.
-
-[Spotify Podcast](https://open.spotify.com/show/1wXPLlc4LROQ5mBfGuzzU0?fbclid=IwY2xjawOddmZleHRuA2FlbQIxMABicmlkETBaY3dCQk1IT0VDMFBLMnNFc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHul6-NeE2cwVsqDMGxsJ6aTpLngcKTthxn-Vg9T-3X-xF74_YsbBGa2hGLwh_aem_w__EQwjOJKGXjRxtkvJTSw)
-
-If you prefer visual content, you can watch the YouTube version of this topic here.
-
-[Watch on YouTube](https://youtu.be/bMn1EWc0vB8)
-
-Please share your experiences. Our story might help someone else feel a little less alone, and together, we can make sense of this one eared world.
+Please share your experiences through the [Connect page](/connect/). Our story might help someone else feel a little less alone, and together, we can make sense of this one eared world.
 
 *Image credit: Bruce Burby.*

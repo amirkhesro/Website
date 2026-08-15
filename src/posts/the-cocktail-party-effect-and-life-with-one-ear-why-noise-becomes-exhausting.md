@@ -65,14 +65,4 @@ Remember, every conversation you manage, every moment you stay engaged, is an ac
 
 It is a small but meaningful victory to catch a student’s question clearly in a noisy classroom, to follow the flow of conversation in the staffroom, or to catch a joke the first time and share the laughter without asking for it again.
 
-Listen to the podcast version of this post  
-If you prefer audio, you can listen to the podcast version here.
-
-[Spoitfy Podcast](https://open.spotify.com/episode/3bvEQkT9LGMS621fblwLBv?si=35215a0c91c4423b)
-
-Watch the video version  
-If you prefer visual content, you can watch the YouTube version of this topic here.
-
-[Watch on YouTube](https://youtu.be/2W_o7H4qe9Y?si=pF5nGt-I0-q7xUTz)
-
-Please share your experiences below. How do you manage in noisy places? What helps you stay connected and less fatigued?
+Please share your experiences through the [Connect page](/connect/). How do you manage in noisy places? What helps you stay connected and less fatigued?

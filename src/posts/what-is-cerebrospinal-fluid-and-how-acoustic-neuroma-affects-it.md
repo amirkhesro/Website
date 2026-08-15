@@ -125,12 +125,4 @@ Thick syrup.
 A leaking pipe.  
 A pressure release valve. Understanding this does not remove the difficulty of the condition, but it removes some of the fear. For many patients, that clarity alone makes the journey easier to live with.
 
-If you prefer audio, you can listen to the podcast version here.
-
-[Spotify Podcast](https://creators.spotify.com/pod/profile/amir-khesro/episodes/What-is-CSF-and-how-Acoustic-Neuroma-affects-it-e3d71re/a-acd76n7)
-
-If you prefer visual content, you can watch the YouTube version of this topic here
-
-[Watch on YouTube](https://youtu.be/hXgeixjprHA)
-
-If you have experienced CSF related issues such as pressure symptoms, leaks, pseudo meningitis, or the use of a lumbar drain, I invite you to share your experience. Your story may help someone else understand what they are going through and feel less alone.
+If you have experienced CSF related issues such as pressure symptoms, leaks, pseudo meningitis, or the use of a lumbar drain, I invite you to share your experience through the [Connect page](/connect/). Your story may help someone else understand what they are going through and feel less alone.

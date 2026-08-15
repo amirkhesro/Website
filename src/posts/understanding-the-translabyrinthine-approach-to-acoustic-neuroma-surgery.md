@@ -58,12 +58,4 @@ I did not get to choose my approach, and honestly, I am glad I did not have to. 
 
 If you are facing this kind of surgery, take heart: you are not the first to walk this path, and there is a community here that understands. I will keep sharing more around acoustic neuroma. My whole website is dedicated to it, as I could not write everything in my memoir *Whispers Through the Fog*.
 
-If you prefer audio, you can listen to the podcast version here.
-
-[Spoitfy Podcast](https://open.spotify.com/episode/1bGObWCMICVFfUvpnkpbt8?si=1c0u8W3WSkKLfEt-dTlSxw)
-
-you prefer visual content, you can watch the YouTube version of this topic here.
-
-[Watch on You tube](https://youtu.be/RTpJF5avnAU)
-
 Stay informed. Stay hopeful. You have got this.

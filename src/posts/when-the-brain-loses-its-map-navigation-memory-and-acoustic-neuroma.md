@@ -101,11 +101,3 @@ Now, I would like to hear from you:
 - Do you notice memory slips that feel out of proportion to daily life?
 
 If so, you are not alone.
-
-If you prefer audio, you can listen to the podcast version here.
-
-[Spotify Podcast](https://open.spotify.com/episode/3z1AcuYuanbsUM5r1DekyP?si=AzZbsigQQf-CVOpMwdZW9Q)
-
-If you prefer visual content, you can watch the YouTube version of this topic here
-
-[Watch on YouTube](https://youtu.be/JX_hQ9LUzf8?si=3rmRjkcqIUATh9rQ)

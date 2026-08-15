@@ -111,13 +111,5 @@ It returns because the brain is forced to adapt.
 
 And in acoustic neuroma, adaptation is an ongoing, active process.
 
-If you prefer audio, you can listen to the podcast version here.[https://spotifycreators-web.app.link/e/SSgCRuvPiZb](https://spotifycreators-web.app.link/e/SSgCRuvPiZb)
-
-Spotify Podcast
-
-If you prefer visual content, you can watch the YouTube version of this topic here
-
-[Watch on Youtube](https://youtu.be/ht8letF5gzA)
-
 If you live with balance problems due to acoustic neuroma, you are not alone.  
 What situations make your balance worse? Fatigue, crowds, low light?

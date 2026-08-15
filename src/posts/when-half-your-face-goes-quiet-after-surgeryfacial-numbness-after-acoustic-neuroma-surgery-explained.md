@@ -120,12 +120,4 @@ If you are touching your face right now and wondering if this numbness is perman
 
 You are not alone.
 
-If you prefer audio, you can listen to the podcast version here.
-
-[Spotify Podcast](https://spotifycreators-web.app.link/e/ioqFAbQBfZb)
-
-If you prefer visual content, you can watch the YouTube version of this topic here
-
-[Watch On You Tube](https://youtu.be/oP46pQo-HmA)
-
 ---

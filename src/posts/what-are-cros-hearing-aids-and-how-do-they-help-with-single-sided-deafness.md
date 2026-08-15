@@ -60,14 +60,6 @@ If you believe you might benefit from a CROS hearing aid and live in the UK:
 
 Considering that the private cost can be thousands of pounds, NHS provision is a life-changing option.
 
-If you prefer audio, you can listen to the podcast version here.
-
-Spotify Podcast
-
-If you prefer visual content, you can watch the YouTube version of this topic here.
-
-[Watch on YouTube](https://youtu.be/H3vDIRc5aeo)
-
 ## Share Your Experience
 
 If you use CROS hearing aids, or are considering them, share your experience. Have they made daily life easier for you? Which brand do you use?

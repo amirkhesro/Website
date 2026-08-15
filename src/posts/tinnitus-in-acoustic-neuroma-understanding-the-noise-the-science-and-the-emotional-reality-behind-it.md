@@ -143,16 +143,6 @@ The tinnitus may stay.
 But you stop feeling threatened by it.  
 And that is the point where life becomes lighter again.
 
-Listen to the podcast version of this post  
-If you prefer audio, you can listen to the podcast version here.
-
-[Spotify Podcast](https://creators.spotify.com/pod/profile/amir-khesro/episodes/Tinnitus-in-Acoustic-Neuroma-e3bbk6j)
-
-Watch the video version  
-If you prefer visual content, you can watch the YouTube version of this topic here.
-
-[watch on YouTube](https://youtu.be/xGbm-9k0aSE)
-
 ## Your Turn
 
 Before you leave, I would love to hear from you.  

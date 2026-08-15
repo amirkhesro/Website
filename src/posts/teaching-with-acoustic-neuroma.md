@@ -96,11 +96,3 @@ This is not about pretending the job fits the condition. It often does not. It i
 ## Your Experience Matters
 
 If you are a teacher living with acoustic neuroma, I would genuinely like to hear from you. How does the classroom feel for you? What drains you the most, and what has helped you stay afloat? Whether you are coping well, struggling quietly, or still trying to work things out, your experience matters. Sharing it may help someone else realise they are not failing, they are adapting. This is one space where the reality does not need to be hidden.
-
-If you prefer audio, you can listen to the podcast version here.
-
-[Spotify Podcast](https://spotifycreators-web.app.link/e/YGzpqJXCZZb)
-
-If you prefer visual content, you can watch the YouTube version of this topic
-
-[Watch on YouTube](https://youtu.be/-RYO_6B2GOg)
