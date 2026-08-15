@@ -166,7 +166,17 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
   All resized files were made from the originals using Windows' built-in System.Drawing via
   PowerShell, at JPEG quality 85 with high-quality bicubic interpolation. No image dependency was
   added to the project; repeat the same way if new sizes are ever needed.
-- Note for SEO work: the site has a `sitemap.xml`, a `robots.txt`, meta descriptions and Open
-  Graph tags (see above), but still has **no canonical tags on ordinary pages**. Redirect pages
-  are the only places carrying canonical and robots tags. This is a gap, not a deliberate
-  removal.
+- **Canonical tags**: `base.njk` gives every ordinary page and every blog post a
+  `<link rel="canonical">` holding its own full address. The address is built as
+  `"https://amirkhesro.com" + page.url` — from Eleventy's own record of where the page was
+  written, never spelled out by hand — so it follows a page that moves and cannot fall out of
+  step with the `permalink`. `og:url` in the same file and `<loc>` in `sitemap.njk` are built
+  from that same value the same way, so all three always agree, trailing slash included; change
+  one and change all three. The 404 page is excluded by the same `page.url != "/404.html"` test
+  the sitemap uses. Redirect pages never reach `base.njk` — they have no layout — and carry
+  their own canonical pointing at the address they forward to, so they are not affected.
+- Note for SEO work: the four gaps originally recorded are now all closed. The site has a
+  `sitemap.xml`, a `robots.txt`, meta descriptions, Open Graph tags, and canonical tags on every
+  ordinary page and post (all four described above). Redirect pages additionally carry `noindex`.
+  Anything further — structured data, for instance — would be new work rather than filling in
+  something known to be missing.

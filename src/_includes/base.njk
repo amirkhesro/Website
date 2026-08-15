@@ -34,6 +34,25 @@
     {#- A post is anything under /blog/ other than the index itself. -#}
     {%- set isPost = page.url.startsWith("/blog/") and page.url != "/blog/" -%}
 
+    {#- The one address a search engine should credit this page to, so that
+        anything else arriving at the same content — a query string on the end,
+        an old WordPress address forwarded here — is gathered to a single
+        address instead of competing with itself.
+
+        It is built from page.url, Eleventy's own record of where the page was
+        actually written, rather than being spelled out here: move a page and
+        the tag moves with it, and it cannot drift out of step with the
+        permalink. og:url below and sitemap.njk are built from that same value
+        the same way, so all three always agree, trailing slash included.
+
+        The 404 page is left out, by the same test sitemap.njk uses — a page
+        not worth listing is not worth claiming an address for. The redirect
+        pages never reach here: they have no layout of their own, and each
+        already carries a canonical pointing at the address it forwards to. -#}
+    {%- if page.url != "/404.html" %}
+    <link rel="canonical" href="https://amirkhesro.com{{ page.url }}">
+    {%- endif %}
+
     {#- A page with nothing to say about itself — only the 404 page — is left
         out of all of this rather than being given an invented description or
         offered for sharing. The redirect pages never reach here: they have no
