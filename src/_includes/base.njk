@@ -21,6 +21,13 @@
     {%- set shareImageW = shareImageWidth or 672 -%}
     {%- set shareImageH = shareImageHeight or 691 -%}
 
+    {#- The headline a social platform puts on the card. It defaults to the
+        page title, which reads well nearly everywhere; a page whose title is
+        too bare on its own — the home page is simply "Home" — can set
+        "shareTitle" in its front matter instead. That changes the card only,
+        never the <title> above or anything on the page itself. -#}
+    {%- set socialTitle = shareTitle or title -%}
+
     {#- A post is anything under /blog/ other than the index itself. -#}
     {%- set isPost = page.url.startsWith("/blog/") and page.url != "/blog/" -%}
 
@@ -36,7 +43,7 @@
         fetching these tags has no page to resolve a relative path against. #}
     <meta property="og:site_name" content="Amir Khesro">
     <meta property="og:type" content="{{ "article" if isPost else "website" }}">
-    <meta property="og:title" content="{{ title }}">
+    <meta property="og:title" content="{{ socialTitle }}">
     <meta property="og:description" content="{{ metaDescription }}">
     <meta property="og:url" content="https://amirkhesro.com{{ page.url }}">
     <meta property="og:image" content="https://amirkhesro.com{{ shareImagePath }}">

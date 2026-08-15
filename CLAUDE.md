@@ -122,7 +122,12 @@ Published by **GitHub Pages** from `.github/workflows/deploy.yml`.
 - **Social sharing**: `base.njk` writes Open Graph tags and a `twitter:card` alongside the meta
   description, reusing the very same description so the wording is only ever written once.
   `og:type` is `article` for blog posts and `website` for everything else, and all addresses are
-  absolute — social platforms cannot resolve relative ones. The share image is:
+  absolute — social platforms cannot resolve relative ones.
+
+  `og:title` uses the page title, which reads well nearly everywhere. A page whose title is too
+  bare on its own can set **`shareTitle:`** in its front matter to override it; this changes the
+  social card only, never the `<title>` tag or anything visible on the page. The home page uses
+  this, because its title is simply "Home". The share image is:
   - the book's own cover at 960×1440 for the two book pages, named in their front matter as
     `shareImage` with `shareImageWidth` and `shareImageHeight`;
   - the author photo `/images/amir-khesro-672.jpg` at 672×691 for every other page and all
