@@ -84,8 +84,15 @@
     0 1px 2px rgba(26, 26, 24, 0.07),
     0 6px 16px rgba(26, 26, 24, 0.10);
 
-  --measure: 47.25rem;        /* content column width */
-  --gutter: 1.4rem;           /* keeps text off the screen edge */
+  --measure: 47.65rem;        /* content column width */
+  --gutter: 1.6rem;           /* keeps text off the screen edge */
+
+  /* Two steps carry the whole vertical rhythm: one between the major
+     sections of a page, one around the blocks inside them. Everything
+     else is measured off these, so a section break is the same distance
+     on the home page as it is halfway down a blog post. */
+  --space-section: 3rem;
+  --space-block: 2.25rem;
 
   --serif: "Lora", Georgia, "Times New Roman", serif;
 }
@@ -129,8 +136,32 @@ footer {
 }
 
 main {
-  padding-top: 2.8rem;
-  padding-bottom: 3.4rem;
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+/* --- Vertical rhythm -----------------------------------------------------
+   Every major block on a page sits the same distance below the one before
+   it: each <section>, the cover or photo lede that opens a book or About
+   page, and any closing paragraph that follows a section.
+   ------------------------------------------------------------------------ */
+
+main > section,
+main > .book-lede,
+main > .about-lede,
+main > section + p {
+  margin-top: var(--space-section);
+}
+
+/* That gap belongs to the block, so whatever the block opens with — a
+   heading, a cover, a paragraph — starts flush against it rather than
+   adding a second gap of its own. */
+main > section > :first-child,
+.book-lede > :first-child,
+.about-lede > :first-child,
+.book-lede > section > :first-child,
+.about-lede > section > :first-child {
+  margin-top: 0;
 }
 
 /* --- Header and navigation ---------------------------------------------- */
@@ -251,12 +282,12 @@ h1 {
 }
 
 h2 {
-  margin: 2.8rem 0 0.85rem;
+  margin: var(--space-section) 0 0.85rem;
   font-size: 1.55rem;     /* 1.41x body */
 }
 
 h3 {
-  margin: 2.25rem 0 0.7rem;
+  margin: var(--space-block) 0 0.7rem;
   font-size: 1.25rem;     /* 1.14x body */
 }
 
@@ -277,7 +308,7 @@ li {
 }
 
 blockquote {
-  margin: 2rem 0;
+  margin: var(--space-block) 0;
   padding-left: 1.25rem;
   border-left: 3px solid var(--rule);
 }
@@ -297,7 +328,7 @@ blockquote cite {
 
 hr {
   height: 0;
-  margin: 2.8rem 0;
+  margin: var(--space-section) 0;
   border: 0;
   border-top: 1px solid var(--rule);
 }
@@ -316,7 +347,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 2rem 0;
+  margin: var(--space-block) 0;
 }
 
 /* Markdown wraps each image in its own paragraph. Where an italic line
@@ -389,10 +420,17 @@ p:has(> img):has(+ p > em:first-child) > img {
   display: flow-root;
 }
 
-/* The cover on a home page card is a link to that book's page. */
+/* The cover on a home page card is a link to that book's page. Its hover
+   cue is the cover's own hairline warming to the accent: a colour change
+   and nothing else, so the cover never shifts under the pointer. */
 .book-cover-link {
   display: inline-block;
   text-decoration: none;
+}
+
+.book-cover-link:hover .book-cover,
+.book-cover-link:focus-visible .book-cover {
+  border-color: var(--accent);
 }
 
 .book-title {
@@ -425,9 +463,9 @@ p:has(> img):has(+ p > em:first-child) > img {
 /* --- Footer ------------------------------------------------------------- */
 
 footer {
-  margin-top: 3.4rem;
-  padding-top: 1.7rem;
-  padding-bottom: 2.8rem;
+  margin-top: var(--space-section);
+  padding-top: 1.9rem;
+  padding-bottom: 3.4rem;
   border-top: 1px solid var(--rule);
   color: var(--muted);
   font-size: 0.95rem;
@@ -440,15 +478,17 @@ footer p {
 /* The health disclaimer sits below the copyright line. Quiet, but still
    at 7.3:1 against the page: small print a reader can actually read. */
 .footer-disclaimer {
-  margin-top: 0.7rem;
+  margin-top: 0.8rem;
   line-height: 1.6;
 }
 
 /* --- Larger screens ----------------------------------------------------- */
 
 @media (min-width: 40em) {
-  main {
-    padding-top: 3.9rem;
+  /* One step wider apart once there is room for it. Raising the token
+     opens up section breaks, rules and the footer together. */
+  :root {
+    --space-section: 3.6rem;
   }
 
   h1 {
@@ -485,11 +525,5 @@ footer p {
 
   .about-lede .author-photo {
     width: 14rem;
-  }
-
-  /* Bring the description's heading up level with the top of the cover
-     instead of starting below it. */
-  .book-lede section > h2:first-child {
-    margin-top: 0;
   }
 }

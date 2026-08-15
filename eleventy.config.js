@@ -43,6 +43,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/downloads");
 
+  // The favicon set belongs at the root of the built site, which is where
+  // browsers and iOS look for it.
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("src/favicon-16x16.png");
+  eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
+
   return {
     dir: {
       input: "src",

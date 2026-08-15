@@ -9,6 +9,13 @@
        fallback type. crossorigin is required even same origin for fonts. #}
     <link rel="preload" href="/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/css/style.css">
+    {# The initials in Lora, accent on the page's own off white. The SVG
+       carries the letters as outlines, so it needs no font to draw; the
+       PNGs are there for browsers that will not take an SVG icon. #}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   </head>
   <body>
     {# Home matches exactly; every other item also matches its child pages,
