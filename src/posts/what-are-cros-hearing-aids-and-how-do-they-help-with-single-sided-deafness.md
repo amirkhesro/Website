@@ -70,4 +70,4 @@ If you prefer visual content, you can watch the YouTube version of this topic he
 
 ## Share Your Experience
 
-If you use CROS hearing aids, or are considering them, share your experience. Have they made daily life easier for you? Which brand do you use? Please share your thoughts in the comments so that others can learn from your journey.
+If you use CROS hearing aids, or are considering them, share your experience. Have they made daily life easier for you? Which brand do you use?

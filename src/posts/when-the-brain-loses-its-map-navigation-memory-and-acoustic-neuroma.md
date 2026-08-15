@@ -100,7 +100,7 @@ Now, I would like to hear from you:
 - Do you struggle with directions, even in familiar places?
 - Do you notice memory slips that feel out of proportion to daily life?
 
-If so, you are not alone. Please share your experience in the comments.
+If so, you are not alone.
 
 If you prefer audio, you can listen to the podcast version here.
 

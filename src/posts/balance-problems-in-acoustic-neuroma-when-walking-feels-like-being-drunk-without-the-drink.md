@@ -120,5 +120,4 @@ If you prefer visual content, you can watch the YouTube version of this topic he
 [Watch on Youtube](https://youtu.be/ht8letF5gzA)
 
 If you live with balance problems due to acoustic neuroma, you are not alone.  
-What situations make your balance worse? Fatigue, crowds, low light?  
-Share your experience in the comments. It helps others feel less isolated.
+What situations make your balance worse? Fatigue, crowds, low light?

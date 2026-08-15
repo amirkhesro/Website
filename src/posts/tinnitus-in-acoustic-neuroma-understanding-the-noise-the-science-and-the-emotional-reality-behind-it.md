@@ -159,6 +159,3 @@ Before you leave, I would love to hear from you.
 What does tinnitus feel like for you  
 When is it at its worst  
 Has it changed over time
-
-Share your experience in the comments.  
-Your words may help someone who is reading this in the middle of their own difficult night.

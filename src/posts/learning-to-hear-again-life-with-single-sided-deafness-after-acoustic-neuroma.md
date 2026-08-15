@@ -71,6 +71,6 @@ For those interested in a more personal perspective, my book *[Whispers Through 
 
 The world may sound different now, but it has not gone away. It is waiting for you to hear it in your own way.
 
-I would love to hear from you. What tools or habits have helped you? Please share in the comments or get in touch.
+I would love to hear from you. What tools or habits have helped you? Please get in touch.
 
 Your silence is heard. And you are not alone.

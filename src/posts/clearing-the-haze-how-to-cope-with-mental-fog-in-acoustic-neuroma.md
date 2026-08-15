@@ -116,5 +116,4 @@ Many of us blame ourselves for not being as “productive” as we used to be—
 **Now it’s my turn to ask you**.
 
 Do you experience mental fog with AN? What’s helped you cope?  
-**What was your strategy? What worked for you?**  
-**Share your story in the comments below, I would love to hear from you.**
+**What was your strategy? What worked for you?**
