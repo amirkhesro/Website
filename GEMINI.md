@@ -91,7 +91,6 @@ amirkhesro-website/
 ├── eleventy.config.js            # Eleventy build configuration
 ├── package.json                  # Project manifest and scripts
 ├── package-lock.json             # Pinned dependency tree
-├── CLAUDE.md                     # Claude Code working guide
 └── GEMINI.md                     # Gemini / Antigravity architectural reference
 ```
 
