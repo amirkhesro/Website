@@ -6,3 +6,7 @@ _site/
 
 # Full size source images. The web sized versions live in src/images.
 originals/
+
+# Internal working notes. Not part of the published site.
+docs/
+project-plan.md
