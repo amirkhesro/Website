@@ -16,3 +16,7 @@ The site is then served at http://localhost:8080 and rebuilds as files change.
 Deployment
 
 Every push to main runs .github/workflows/deploy.yml, which builds the site and publishes it to GitHub Pages. A push to main is therefore a publication.
+
+Licence
+
+Copyright 2026 Amir Khesro. All rights reserved. No licence is granted for reuse of the code or the content in this repository.
