@@ -542,6 +542,7 @@ p:has(> img):has(+ p > em:first-child) > img {
    phone the cover shrinks to the card instead of forcing the page sideways. */
 .book-cover {
   width: 100%;
+  height: auto;
   max-width: 17rem;
   aspect-ratio: 2 / 3;
   margin: 0 0 1.15rem;
