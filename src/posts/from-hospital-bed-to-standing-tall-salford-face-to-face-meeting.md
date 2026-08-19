@@ -11,8 +11,6 @@ Of course, none of my visits would be complete without laughter. I confessed to 
 
 ---
 
-![Amir Khesro in a cream suit reading a passage aloud from his book at a lectern in the Salford lecture theatre](/images/blog/salford-meeting-reading-from-the-book.jpg)
-
 *Reading from my book, **Whispers Through the Fog**, at the Salford Face-to-Face Meeting.*
 
 ---
@@ -34,8 +32,6 @@ After the reading, we had open and heartfelt discussions. Together, we explored 
 We shared tips, strategies, and victories, no matter how small. We reminded each other that even on the hardest days, progress is possible. The energy in the room was uplifting, and the sense of community was unshakable.
 
 Of course, our discussions also went deep into the technical side of things and this is where Andrea shone. With her expertise, she patiently answered all the medical and technical questions, giving the group clarity and reassurance that only a true specialist can provide
-
-![Twelve attendees of the Salford Face-to-Face Meeting gathered for a photograph, several of them holding copies of Whispers Through the Fog](/images/blog/salford-meeting-group-with-books.jpg)
 
 ***Whispers Through the Fog i**n so many hands. Thank you all for the support and inspiring conversations*.
 

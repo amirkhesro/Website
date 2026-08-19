@@ -50,8 +50,6 @@ But there I was.
 I didn’t overthink it.  
 I just moved.
 
-![Four men leaping barefoot through the shallow surf with their arms flung wide, the cranes of the Liverpool docks on the horizon behind them](/images/blog/from-surgery-to-sand-jumping-in-the-surf.jpg)
-
 **The moment that said: I am back.**
 
 I ran.  

@@ -5,8 +5,6 @@ date: 2025-07-05
 
 Living with the aftermath of acoustic neuroma surgery can be confusing, frustrating, and at times, deeply isolating. Some common symptoms include facial numbness, weakness in jaw, constant dryness in the eye, and a strange, salty or metallic taste that comes and goes. In my case, I also notice small cuts on my tongue and an odd heaviness that makes it feel clumsy and unfamiliar. These symptoms are real, and they don’t just affect the body — they affect the spirit. But over time, I have come to understand that knowing why they happen can ease some of the fear. Today, I want to explain why they occur and remind you that you don’t need to become a neurologist to make sense of what’s happening to your body. A little knowledge can go a long way in helping you accept your situation, keep realistic expectations, and avoid unnecessary worry.
 
-![Illustration of a man resting a hand against his numb cheek with a tear running from that eye, beside the title Facial Numbness and Eye Dryness After Acoustic Neuroma](/images/blog/facial-numbness-and-dry-eye.jpg)
-
 ## Understanding the Condition
 
 Acoustic neuroma/ vestibular schwannoma forms on the **vestibulocochlear nerve (cranial nerve VIII)**. This nerve controls hearing and balance and is located deep near the inner ear at the base of the brain.
